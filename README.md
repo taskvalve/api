@@ -72,7 +72,7 @@ Settings Response
 Update user settings:
 
 ```
-curl -X PUT 'https://api.taskvalve.com/rest/v1/user_settings?user_id=eq.YOUR_USER_ID' \
+curl -X PATCH 'https://api.taskvalve.com/rest/v1/user_settings?user_id=eq.YOUR_USER_ID' \
 -H "apikey: PUBLIC_API_KEY" \
 -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
 -H "Content-Type: application/json" \
