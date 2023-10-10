@@ -8,6 +8,9 @@
   - [Retrieve Workflows](#retrieve-workflows)
 - [Activities](#activities)
   - [Retrieve Activities](#retrieve-activities)
+- [Selecting](#selecting)
+  - [Including](#including)
+  - [Excluding](#excluding)
 - [Filtering](#filtering)
   - [eq](#eq)
   - [neq](#neq)
@@ -101,6 +104,28 @@ Fetch a list of activities:
 
 ```bash
 curl 'https://api.taskvalve.com/rest/v1/activities?select=*' \
+-H "apikey: PUBLIC_API_KEY" \
+-H "Authorization: Bearer YOUR_ACCESS_TOKEN"
+```
+
+## Selecting
+
+### Including
+
+Retrieve only the id and creation time of workflows:
+
+```
+curl 'https://api.taskvalve.com/rest/v1/workflows?select=workflow_id,created_at' \
+-H "apikey: PUBLIC_API_KEY" \
+-H "Authorization: Bearer YOUR_ACCESS_TOKEN"
+```
+
+### Excluding
+
+Retrieve activities without the output:
+
+```
+curl 'https://api.taskvalve.com/rest/v1/activities?select=-output' \
 -H "apikey: PUBLIC_API_KEY" \
 -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 ```
